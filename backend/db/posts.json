@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "username": "wynny",
+    "posts": [
+      {
+        "address": "Rautatieläisenkatu 5",
+        "imgSource": "https://images.unsplash.com/photo-1570824104453-508955ab713e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1213&q=80",
+        "title": "Title of post 1",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quas officiis harum, vel non dolore nostrum nulla sunt, corporis nemo exercitationem provident atque quibusdam illo mollitia, labore ipsam soluta fugit ad! Totam, sint quia aut minus labore in tempora dicta perspiciatis ipsa voluptatum repudiandae dolores quaerat earum praesentium unde aliquam amet accusantium harum reiciendis sit vitae autem atque. Consequatur, recusandae architecto magni tempore asperiores dolorum obcaecati culpa vel, mollitia ducimus quaerat exercitationem adipisci voluptatibus explicabo cum repellendus qui autem unde! Aperiam itaque reiciendis in alias, molestiae porro nostrum sed ab culpa! Magni, ratione veritatis accusantium cupiditate temporibus laborum sequi eum."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "username": "L. Skywalker",
+    "posts": [
+      {
+        "address": "Urho Kekkosen katu 1",
+        "imgSource": "https://images.unsplash.com/photo-1602924097911-a78ca1af38c6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1018&q=80",
+        "title": "Title of post 2",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quas officiis harum, vel non dolore nostrum nulla sunt, corporis nemo exercitationem provident atque quibusdam illo mollitia, labore ipsam soluta fugit ad! Totam, sint quia aut minus labore in tempora dicta perspiciatis ipsa voluptatum repudiandae dolores quaerat earum praesentium unde aliquam amet accusantium harum reiciendis sit vitae autem atque. Consequatur, recusandae architecto magni tempore asperiores dolorum obcaecati culpa vel, mollitia ducimus quaerat exercitationem adipisci voluptatibus explicabo cum repellendus qui autem unde! Aperiam itaque reiciendis in alias, molestiae porro nostrum sed ab culpa! Magni, ratione veritatis accusantium cupiditate temporibus laborum sequi eum."
+      }
+    ]
+  }
+]
