@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Dashboard from './components/Dashboard';
 import Login from './components/auth/Login';
 import SignUp from './components/auth/SignUp';
+import Posts from './components/Posts/Posts'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
               <Route path='/signin' component={Login} />
               <Route path='/signup' component={SignUp} />
               <Route path='/dashboard' component={Dashboard} />
+              <Route path="/posts" component={Posts} />
             </Switch>
           </div>
         </div>
