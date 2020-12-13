@@ -14,19 +14,33 @@ app.use(cors());
 app.get('/', (req, res) => {});
 
 app.post('/users', async (req, res) => {
-  const data = await addUserController.invoke(req);
-  sendResponse(res, data);
+  try {
+    const data = await addUserController.invoke(req);
+    sendSuccessResponse(res, data);
+  }
+  catch(error) {
+    sendErrorResponse(res, error);
+  }
 });
 
 app.post('/tokens', async (req, res) => {
-  const data = await getTokenController.invoke(req);
-  sendResponse(res, data);
+  try {
+    const data = await getTokenController.invoke(req);
+    sendSuccessResponse(res, data);
+  }
+  catch(error) {
+    sendErrorResponse(res, error);
+  }
 });
 
 app.get('/myaccount', async (req, res) => {
-  const data = await myAccountController.invoke(req);
-  res.setHeader('Content-Type', 'application/json');
-  res.end(JSON.stringify(data));
+  try {
+    const data = await myAccountController.invoke(req);
+    sendSuccessResponse(res, data);
+  }
+  catch(error) {
+    sendErrorResponse(res, error);
+  }
 });
 
 app.get('/posts', async (req, res) => {
@@ -39,10 +53,10 @@ app.listen(5000, () => {
   console.log('Server is running on port 5000');
 });
 
-const sendErrorResponse = (res, data) => {
+const sendErrorResponse = (res, error) => {
   res.setHeader('Content-Type', 'application/json');
-  res.status(data.code);
-  res.end(JSON.stringify(data));
+  res.status(error.statusCode);
+  res.end(error.message);
 };
 
 const sendSuccessResponse = (res, data) => {

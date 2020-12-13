@@ -1,42 +1,45 @@
-const path = require('path');
-const fs = require('fs').promises;
+const path = require("path");
+const fs = require("fs").promises;
+const createError = require("http-errors");
 
-const dataFile = path.join(__dirname, '..', 'db', 'users.json');
+const dataFile = path.join(__dirname, "..", "db", "users.json");
 
+// Private methods
 const readDb = async () => {
   try {
-    const users = await fs.readFile(dataFile, 'utf-8');
+    const users = await fs.readFile(dataFile, "utf-8");
     return JSON.parse(users);
   } catch (err) {
-    return [];
+    //console.log(err);
+    throw createError(500, "Cannot read from DB json file!");
   }
 };
 
 const writeToDb = async (data) => {
   try {
     await fs.writeFile(dataFile, JSON.stringify(data, null, 4), {
-      encoding: 'utf-8',
-      flag: 'w',
+      encoding: "utf-8",
+      flag: "w",
     });
-    return 'Write successfully';
   } catch (err) {
-    return err;
+    throw createError(500, "Cannot write to DB json file!");
   }
 };
 
-const checkExist = async (user) => {
+// MAIN methods
+const checkExist = async (username) => {
   const users = await readDb();
-  const existUser = users.filter((u) => {
-    return u.username === user.username;
+  const filteredResult = users.filter((u) => {
+    return username === u.username;
   });
-  return existUser.length > 0;
+  return filteredResult.length > 0;
 };
 
 const insert = async (user) => {
-  const users = await readDb();
-  users.push(user);
-  await writeToDb(users);
-  return user;
+    const users = await readDb();
+    users.push(user);
+    await writeToDb(users);
+    return user;
 };
 
 const find = async (username) => {
@@ -54,4 +57,5 @@ const get = async (userId) => {
   });
   return foundUser || null;
 };
+
 module.exports = { insert, checkExist, find, get };

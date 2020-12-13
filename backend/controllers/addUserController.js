@@ -1,30 +1,23 @@
-const addUserUseCase = require('../usecases/addUserUseCase');
+const addUserUseCase = require("../usecases/addUserUseCase");
+const createError = require("http-errors");
 
 const invoke = async (req) => {
   const userInput = req.body;
-  if (!userInput.username && !userInput.email && !userInput.password) {
-    return {
-      code: 422,
-      message: `Invalid user's input`,
-      success: false,
-    };
-  } else {
-    const newUser = await addUserUseCase.handle(userInput);
-    if (newUser === false) {
-      return {
-        code: 400,
-        message: 'Cannot create new user. User might already exist!',
-        success: false,
-      };
-    }
-    {
-      return {
-        code: 200,
-        data: newUser,
-        success: 'true',
-      };
-    }
+  if (!userInput.username) {
+    throw createError(400, "Please enter username!");
   }
+  if (!userInput.email) {
+    throw createError(400, "Please enter email!");
+  }
+  if (!userInput.password) {
+    throw createError(400, "Please enter password!");
+  }
+
+
+
+  return {
+    data: await addUserUseCase.handle(userInput),
+  };
 };
 
 module.exports = { invoke };

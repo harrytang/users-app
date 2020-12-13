@@ -29,8 +29,8 @@ class SignUp extends Component {
       })
       .catch((err) => {
         console.log(err.response);
-        alert(`${err.response.data.message}`);
-        this.setState({ username: '', email: '', password: '' });
+        alert(`${err.response.data}`);
+        //this.setState({ username: '', email: '', password: '' });
       });
   };
 

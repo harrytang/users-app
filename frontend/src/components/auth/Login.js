@@ -29,8 +29,8 @@ class Login extends Component {
         window.location.href = 'http://localhost:3000/dashboard';
       })
       .catch((err) => {
-        alert(`${err.response.data.message}`);
-        this.setState({ username: '', email: '', password: '' });
+        alert(`${err.response.data}`);
+        //this.setState({ username: '', email: '', password: '' });
       });
   };
 

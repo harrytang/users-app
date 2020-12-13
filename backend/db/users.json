@@ -4,5 +4,29 @@
         "username": "wynny",
         "email": "test@gmail.com",
         "password": "test123456"
+    },
+    {
+        "userId": 1607860740792,
+        "username": "harrytang",
+        "email": "harry@powerkernel.com",
+        "password": "Gi@Duy7275"
+    },
+    {
+        "userId": 1607865756469,
+        "username": "harrytang1",
+        "email": "member@giaduy.info",
+        "password": "Gi@Duy7275"
+    },
+    {
+        "userId": 1607866025826,
+        "username": "harrytang2",
+        "email": "harry@powerkernel.com",
+        "password": "Gi@Duy7275"
+    },
+    {
+        "userId": 1607869239651,
+        "username": "giaduy",
+        "email": "harry@powerkernel.com",
+        "password": "12312312"
     }
 ]
